@@ -3,8 +3,8 @@ Version: 1.0.0
 Section: Roothide
 Maintainer: Astear17 <go548394@gmail.com>
 Architecture: iphoneos-arm64e
-Filename: ./debs/com.pure26.astear17_1.0.0_iphoneos-arm64e.deb
+Filename: debs/com.pure26.astear17_1.0.0_iphoneos-arm64e.deb
 Description: Chủ đề icon iOS 26 bằng SnowBoard.
 Name: Pure26
-Author: Astear17 <go548394@gmail.com>
+Author: Astear17
 Depiction: https://astear17.github.io/repos/depictions/Pure26.json
