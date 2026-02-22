@@ -1,1 +1,236 @@
-sileo://source/https://astear17.github.io/repo
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Astear17 Repo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --glass: rgba(255, 255, 255, 0.03);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --glass-reflection: rgba(255, 255, 255, 0.08);
+            --accent: #00d2ff;
+            --text-primary: #ffffff;
+            --text-secondary: rgba(255, 255, 255, 0.55);
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background: radial-gradient(circle at 50% -20%, #1e3a8a, #000000);
+            background-color: #000;
+            color: var(--text-primary);
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 500px;
+            padding: 60px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-weight: 800;
+            font-size: 2.2rem;
+            letter-spacing: -0.05em;
+            margin: 0;
+            background: linear-gradient(to bottom, #fff, #999);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: var(--text-secondary);
+            margin-left: 10px;
+            margin-bottom: 8px;
+        }
+
+        .glass-card {
+            background: var(--glass);
+            backdrop-filter: blur(30px) saturate(160%);
+            -webkit-backdrop-filter: blur(30px) saturate(160%);
+            border: 1px solid var(--glass-border);
+            border-radius: 28px;
+            padding: 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            position: relative;
+            overflow: hidden;
+            transition: transform 0.4s cubic-bezier(0.2, 1, 0.3, 1);
+        }
+
+        .glass-card:hover {
+            transform: translateY(-4px);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Liquid reflection effect */
+        .glass-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+        }
+
+        .repo-link-box {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 16px;
+            padding: 16px;
+            font-family: monospace;
+            font-size: 0.85rem;
+            color: var(--accent);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+            margin-bottom: 16px;
+            word-break: break-all;
+        }
+
+        .pkg-row {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+        }
+
+        .pkg-icon {
+            width: 64px;
+            height: 64px;
+            border-radius: 16px;
+            background: linear-gradient(135deg, #00d2ff, #3a7bd5);
+            box-shadow: 0 8px 16px rgba(0, 210, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.2rem;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            flex-shrink: 0;
+        }
+
+        .pkg-meta h2 {
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .pkg-meta p {
+            margin: 4px 0 0;
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: var(--text-primary);
+            color: #000;
+            text-decoration: none;
+            padding: 16px;
+            border-radius: 18px;
+            font-weight: 700;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background: var(--accent);
+            transform: scale(1.02);
+        }
+
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.05);
+            color: var(--text-primary);
+            border: 1px solid var(--glass-border);
+            margin-top: 0;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-bottom: 40px;
+        }
+
+        .footer-text {
+            font-size: 0.75rem;
+            color: var(--text-secondary);
+            letter-spacing: 0.05em;
+        }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 1.8rem; }
+            .container { width: 85%; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <header>
+        <h1>Astear17</h1>
+    </header>
+
+    <section>
+        <div class="section-label">Source</div>
+        <div class="glass-card">
+            <div class="repo-link-box">https://astear17.github.io/repo</div>
+            <a href="sileo://source/https://astear17.github.io/repo" class="btn">
+                Add to Sileo
+            </a>
+        </div>
+    </section>
+
+    <section>
+        <div class="section-label">Featured Package</div>
+        <div class="glass-card">
+            <div class="pkg-row">
+                <div class="pkg-icon">P26</div>
+                <div class="pkg-meta">
+                    <h2>Pure26</h2>
+                    <p>com.pure26.astear17</p>
+                    <p>Liquid Glass Icons</p>
+                </div>
+            </div>
+            <div style="margin-top: 20px;">
+                <a href="#" class="btn btn-secondary" onclick="copyRepo()">
+                    Copy URL
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p class="footer-text">Build and deployed by Astear17</p>
+    </footer>
+</div>
+
+<script>
+    function copyRepo() {
+        const url = "https://astear17.github.io/repos";
+        navigator.clipboard.writeText(url).then(() => {
+            alert("Repository URL copied!");
+        });
+    }
+</script>
+
+</body>
+</html>
