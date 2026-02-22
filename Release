@@ -1,0 +1,8 @@
+Origin: Astear17
+Label: Astear17
+Suite: stable
+Version: 1.0
+Codename: ios
+Architectures: iphoneos-arm64e
+Components: main
+Description: Astear17's Repo
