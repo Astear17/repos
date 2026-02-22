@@ -1,0 +1,12 @@
+{
+    "class": "FeaturedBannersView",
+    "itemSize": "{263, 148}",
+    "itemCornerRadius": 10,
+    "banners": [
+        {
+            "title": "Pure26",
+            "package": "com.pure26.astear17",
+            "url": "https://astear17.github.io/icon/Pure26.png"
+        }
+    ]
+}
