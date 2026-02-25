@@ -79,7 +79,6 @@
             border-color: rgba(255, 255, 255, 0.2);
         }
 
-        /* Liquid reflection effect */
         .glass-card::before {
             content: '';
             position: absolute;
@@ -186,51 +185,43 @@
 
 <div class="container">
     <header>
-        <h1>Astear17</h1>
+        <h1>Astear17 Repo</h1>
     </header>
 
-    <section>
-        <div class="section-label">Source</div>
-        <div class="glass-card">
-            <div class="repo-link-box">https://astear17.github.io/repo</div>
-            <a href="sileo://source/https://astear17.github.io/repo" class="btn">
-                Add to Sileo
-            </a>
-        </div>
-    </section>
+    <div class="section-label">Source URL</div>
+    <div class="glass-card">
+        <div class="repo-link-box">https://astear17.github.io/repo</div>
+        <a href="sileo://source/https://astear17.github.io/repo" class="btn">Add to Sileo</a>
+    </div>
 
-    <section>
-        <div class="section-label">Featured Package</div>
-        <div class="glass-card">
-            <div class="pkg-row">
-                <div class="pkg-icon">P26</div>
-                <div class="pkg-meta">
-                    <h2>Pure26</h2>
-                    <p>com.pure26.astear17</p>
-                    <p>Liquid Glass Icons</p>
-                </div>
-            </div>
-            <div style="margin-top: 20px;">
-                <a href="#" class="btn btn-secondary" onclick="copyRepo()">
-                    Copy URL
-                </a>
+    <div class="section-label">Featured Packages</div>
+    
+    <div class="glass-card">
+        <div class="pkg-row">
+            <div class="pkg-icon">L</div>
+            <div class="pkg-meta">
+                <h2>Locket (Gold)</h2>
+                <p>v2.8.0 • 135 MB</p>
             </div>
         </div>
-    </section>
+        <a href="#" class="btn btn-secondary">Download IPA</a>
+    </div>
+
+    <div class="glass-card">
+        <div class="pkg-row">
+            <div class="pkg-icon">M</div>
+            <div class="pkg-meta">
+                <h2>Minecraft</h2>
+                <p>v1.21.124 • 590 MB</p>
+            </div>
+        </div>
+        <a href="#" class="btn btn-secondary">Download IPA</a>
+    </div>
 
     <footer>
-        <p class="footer-text">Build and deployed by Astear17</p>
+        <p class="footer-text">BUILT BY ASTEAR17</p>
     </footer>
 </div>
-
-<script>
-    function copyRepo() {
-        const url = "https://astear17.github.io/repos";
-        navigator.clipboard.writeText(url).then(() => {
-            alert("Repository URL copied!");
-        });
-    }
-</script>
 
 </body>
 </html>
