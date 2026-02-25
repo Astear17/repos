@@ -124,28 +124,56 @@
             background: #e2e8f0;
             color: #000;
         }
+        .glass-header {
+    background: rgba(30, 30, 35, 0.4);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+main {
+    padding-top: 40px; /* Adds extra space below the fixed header */
+}
     </style>
 </head>
 <body class="flex flex-col items-center py-16 px-4">
 
-    <header class="mb-12 text-center">
-        <h1 class="text-4xl font-extrabold tracking-tighter text-white">
-            <span>Astear17</span>
-        </h1>
-    </header>
+    <header class="fixed top-4 left-0 right-0 z-50 flex justify-center px-4">
+    <div class="glass-header w-full max-w-lg h-16 rounded-[2rem] px-6 flex items-center justify-between">
+        <a href="https://astear17.github.io" class="flex-1 flex items-center hover:opacity-70 transition-opacity">
+            <div class="p-1.5 rounded-full bg-blue-900/20 mr-2 text-blue-400">
+                <i data-lucide="chevron-left" class="w-5 h-5"></i>
+            </div>
+            <span class="text-blue-400 text-sm font-semibold hidden sm:inline">Home</span>
+        </a>
+        <div class="flex-1 text-center truncate">
+            <span class="text-2xl font-bold tracking-tighter text-white">Astear17 <span class="text-blue-500">Repo</span></span>
+        </div>
+        <div class="flex-1 flex justify-end">
+            </div>
+    </div>
+</header>
 
     <main class="w-full max-w-lg space-y-8">
         
         <section>
-            <div class="section-label">Source</div>
-            <div class="glass-card p-6 space-y-4">
-                <div class="repo-link-box">https://astear17.github.io/repos</div>
-                <a href="sileo://source/https://astear17.github.io/repos" class="btn-action btn-primary">
-                    <i data-lucide="plus-circle" class="w-5 h-5"></i>
-                    Add to Sileo
-                </a>
-            </div>
-        </section>
+    <div class="section-label">Source</div>
+    <div class="glass-card p-6 space-y-4">
+        <div class="repo-link-box">https://astear17.github.io/repos</div>
+        <div class="flex flex-col sm:flex-row gap-3">
+            <a href="sileo://source/https://astear17.github.io/repos" class="btn-action btn-primary flex-1">
+                <i data-lucide="plus-circle" class="w-5 h-5"></i>
+                Add to Sileo
+            </a>
+
+            <button onclick="copyRepo()" class="btn-action flex-1">
+                <i data-lucide="copy" class="w-5 h-5"></i>
+                Copy Link
+            </button>
+        </div>
+    </div>
+</section>
 <section>
     <div class="section-label">Featured Package</div>
     <div class="glass-card p-6">
