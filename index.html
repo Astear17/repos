@@ -6,222 +6,277 @@
     <title>Astear17 Repo</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        :root {
-            --glass: rgba(255, 255, 255, 0.03);
-            --glass-border: rgba(255, 255, 255, 0.1);
-            --glass-reflection: rgba(255, 255, 255, 0.08);
-            --accent: #00d2ff;
-            --text-primary: #ffffff;
-            --text-secondary: rgba(255, 255, 255, 0.55);
-        }
+        /* Astear17 — iDevPatcher visual style (adapted for the second HTML structure) */
+/* Paste into <style> or an external stylesheet. Uses Inter font assumed loaded. */
 
-        body {
-            margin: 0;
-            padding: 0;
-            background: radial-gradient(circle at 50% -20%, #1e3a8a, #000000);
-            background-color: #000;
-            color: var(--text-primary);
-            font-family: 'Inter', sans-serif;
-            display: flex;
-            justify-content: center;
-            min-height: 100vh;
-        }
+:root{
+  --glass-bg: rgba(255,255,255,0.06);
+  --glass-border: rgba(255,255,255,0.12);
+  --glass-reflection: rgba(255,255,255,0.08);
+  --accent: #007aff; /* primary accent (blue) */
+  --accent-2: #00d2ff; /* secondary bright */
+  --text-primary: #0f1724;
+  --muted: rgba(15,23,36,0.55);
+  --card-radius: 28px;
+  --shadow-weak: 0 8px 20px rgba(2,6,23,0.35);
+  --shadow-strong: 0 20px 50px rgba(2,6,23,0.45);
+}
 
-        .container {
-            width: 90%;
-            max-width: 500px;
-            padding: 60px 0;
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
+/* Global reset + base */
+* { box-sizing: border-box; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+html,body { height:100%; margin:0; padding:0; }
+body{
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(135deg, #e0eafc 0%, #cfdef3 100%); /* light liquid background */
+  color: #111827;
+  min-height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:flex-start;
+  -webkit-font-smoothing:antialiased;
+  background-attachment: fixed;
+  transition: background-color .35s ease, color .35s ease;
+}
 
-        header {
-            text-align: center;
-            margin-bottom: 20px;
-        }
+/* Dark theme overlay when html.dark is present */
+#dark-bg-overlay{
+  position:fixed; inset:0; z-index:-2; pointer-events:none;
+  background: linear-gradient(135deg,#0f172a 0%, #1e1b4b 50%, #2e1065 100%);
+  opacity:0; transition:opacity .35s ease;
+}
+html.dark #dark-bg-overlay{ opacity:1; }
+html.dark body{
+  background: transparent;
+  color: #e6eefb;
+}
 
-        h1 {
-            font-weight: 800;
-            font-size: 2.2rem;
-            letter-spacing: -0.05em;
-            margin: 0;
-            background: linear-gradient(to bottom, #fff, #999);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
+/* Container */
+.container{
+  width:90%;
+  max-width:820px;
+  padding:56px 20px;
+  display:flex;
+  flex-direction:column;
+  gap:28px;
+}
 
-        .section-label {
-            font-size: 0.75rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: var(--text-secondary);
-            margin-left: 10px;
-            margin-bottom: 8px;
-        }
+/* Header */
+header{ text-align:center; margin-bottom:4px; }
+h1{
+  font-weight:800;
+  font-size:2.1rem;
+  margin:0;
+  letter-spacing:-0.02em;
+  background: linear-gradient(180deg, #0f1724 0%, #111827 60%);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+html.dark h1{
+  background: linear-gradient(180deg,#fff 0%, #cbd5e1 60%);
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
 
-        .glass-card {
-            background: var(--glass);
-            backdrop-filter: blur(30px) saturate(160%);
-            -webkit-backdrop-filter: blur(30px) saturate(160%);
-            border: 1px solid var(--glass-border);
-            border-radius: 28px;
-            padding: 24px;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-            position: relative;
-            overflow: hidden;
-            transition: transform 0.4s cubic-bezier(0.2, 1, 0.3, 1);
-        }
+/* Section label small caps */
+.section-label{
+  font-size:0.75rem;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:0.12em;
+  color: rgba(17,24,39,0.6);
+  margin-left:8px;
+}
+html.dark .section-label{ color: rgba(226,232,240,0.55); }
 
-        .glass-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(255, 255, 255, 0.2);
-        }
+/* Glass card (primary building block) */
+.glass-card{
+  position:relative;
+  background: var(--glass-bg);
+  border:1px solid var(--glass-border);
+  border-radius: var(--card-radius);
+  padding:22px;
+  box-shadow: var(--shadow-weak);
+  overflow:hidden;
+  backdrop-filter: blur(18px) saturate(150%);
+  -webkit-backdrop-filter: blur(18px) saturate(150%);
+  transition: transform .32s cubic-bezier(.2,.9,.3,1), border-color .25s ease, box-shadow .25s ease;
+}
+.glass-card:hover{ transform: translateY(-6px); box-shadow: var(--shadow-strong); border-color: rgba(255,255,255,0.18); }
 
-        .glass-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-        }
+/* subtle glossy reflection line */
+.glass-card::before{
+  content:"";
+  position:absolute;
+  left:0; right:0; top:0; height:1px;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.28), transparent);
+  mix-blend-mode: overlay;
+  pointer-events:none;
+}
 
-        .repo-link-box {
-            background: rgba(0, 0, 0, 0.2);
-            border-radius: 16px;
-            padding: 16px;
-            font-family: monospace;
-            font-size: 0.85rem;
-            color: var(--accent);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            text-align: center;
-            margin-bottom: 16px;
-            word-break: break-all;
-        }
+/* repo link box (monospace) */
+.repo-link-box{
+  background: rgba(255,255,255,0.02);
+  border-radius:14px;
+  padding:14px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace;
+  font-size:0.88rem;
+  color: var(--accent-2);
+  border:1px solid rgba(255,255,255,0.04);
+  word-break:break-all;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.2) inset;
+}
 
-        .pkg-row {
-            display: flex;
-            align-items: center;
-            gap: 18px;
-        }
+/* Package row layout */
+.pkg-row{
+  display:flex;
+  gap:18px;
+  align-items:center;
+}
 
-        .pkg-icon {
-            width: 64px;
-            height: 64px;
-            border-radius: 16px;
-            background: linear-gradient(135deg, #00d2ff, #3a7bd5);
-            box-shadow: 0 8px 16px rgba(0, 210, 255, 0.2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-size: 1.2rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            flex-shrink: 0;
-        }
+/* Icon tile (liquid / gradient) */
+.pkg-icon{
+  width:76px;
+  height:76px;
+  border-radius:18px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  color:white;
+  font-weight:800;
+  font-size:1.25rem;
+  background: linear-gradient(135deg, #00d2ff 0%, #3a7bd5 100%);
+  box-shadow: 0 12px 30px rgba(58,123,213,0.12);
+  border:1px solid rgba(255,255,255,0.12);
+  flex-shrink:0;
+  position:relative;
+  overflow:hidden;
+}
 
-        .pkg-meta h2 {
-            margin: 0;
-            font-size: 1.2rem;
-            font-weight: 700;
-        }
+/* glow / ring */
+.pkg-icon::after{
+  content:"";
+  position:absolute;
+  inset: -6px;
+  border-radius:16px;
+  background: radial-gradient(circle at 30% 30%, rgba(255,255,255,0.12) 0%, transparent 30%);
+  filter: blur(8px);
+  pointer-events:none;
+}
 
-        .pkg-meta p {
-            margin: 4px 0 0;
-            font-size: 0.85rem;
-            color: var(--text-secondary);
-        }
+/* Meta text */
+.pkg-meta h2{ margin:0; font-size:1.12rem; font-weight:700; color: #0b1220; }
+.pkg-meta p{ margin:6px 0 0; font-size:0.88rem; color: var(--muted); }
+html.dark .pkg-meta h2 { color: #e6eefb; }
+html.dark .pkg-meta p { color: rgba(226,232,240,0.66); }
 
-        .btn {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            background: var(--text-primary);
-            color: #000;
-            text-decoration: none;
-            padding: 16px;
-            border-radius: 18px;
-            font-weight: 700;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-            margin-top: 10px;
-        }
+/* Buttons */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  background: linear-gradient(180deg,#ffffff 0%, #f3f4f6 100%);
+  color:#000;
+  text-decoration:none;
+  padding:12px 18px;
+  border-radius:18px;
+  font-weight:800;
+  font-size:0.95rem;
+  border: none;
+  cursor:pointer;
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+  box-shadow: 0 8px 30px rgba(2,6,23,0.12);
+}
+.btn:hover{ transform: translateY(-3px) scale(1.02); background: linear-gradient(180deg,var(--accent-2), #3a7bd5); color:#fff; box-shadow: 0 18px 40px rgba(10,60,120,0.18); }
 
-        .btn:hover {
-            background: var(--accent);
-            transform: scale(1.02);
-        }
+/* Secondary button: subtle glass */
+.btn.btn-secondary{
+  background: rgba(255,255,255,0.04);
+  color: inherit;
+  border:1px solid rgba(255,255,255,0.06);
+  box-shadow:none;
+  font-weight:700;
+  padding:10px 14px;
+}
+.btn.btn-secondary:hover{
+  transform: translateY(-3px);
+  background: rgba(255,255,255,0.06);
+  border-color: rgba(255,255,255,0.12);
+}
 
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.05);
-            color: var(--text-primary);
-            border: 1px solid var(--glass-border);
-            margin-top: 0;
-        }
+/* Footer text */
+footer{ text-align:center; margin-top:8px; padding-bottom:32px; }
+.footer-text{ font-size:0.78rem; color: rgba(17,24,39,0.5); letter-spacing:0.04em; }
+html.dark .footer-text{ color: rgba(226,232,240,0.54); }
 
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            padding-bottom: 40px;
-        }
+/* Responsive tweaks */
+@media (max-width:720px){
+  .pkg-row{ gap:14px; }
+  .pkg-icon{ width:64px; height:64px; border-radius:14px; }
+  .container{ padding:36px 14px; }
+  h1{ font-size:1.8rem; }
+}
 
-        .footer-text {
-            font-size: 0.75rem;
-            color: var(--text-secondary);
-            letter-spacing: 0.05em;
-        }
+/* Accessibility: focus states */
+.btn:focus, .btn-secondary:focus, .repo-link-box:focus {
+  outline: 3px solid rgba(0,122,255,0.16);
+  outline-offset: 3px;
+}
 
-        @media (max-width: 480px) {
-            h1 { font-size: 1.8rem; }
-            .container { width: 85%; }
-        }
+/* Optional helpers for dark-mode switch if you want to toggle */
+html.dark .glass-card{ background: rgba(28,28,30,0.36); border:1px solid rgba(255,255,255,0.04); box-shadow: 0 18px 45px rgba(2,6,23,0.6); }
+html.dark body{ background: linear-gradient(135deg,#050715 0%, #0b0820 60%); }
     </style>
 </head>
 <body>
 
 <div class="container">
     <header>
-        <h1>Astear17 Repo</h1>
+        <h1>Astear17</h1>
     </header>
 
-    <div class="section-label">Source URL</div>
-    <div class="glass-card">
-        <div class="repo-link-box">https://astear17.github.io/repo</div>
-        <a href="sileo://source/https://astear17.github.io/repo" class="btn">Add to Sileo</a>
-    </div>
+    <section>
+        <div class="section-label">Source</div>
+        <div class="glass-card">
+            <div class="repo-link-box">https://astear17.github.io/repo</div>
+            <a href="sileo://source/https://astear17.github.io/repo" class="btn">
+                Add to Sileo
+            </a>
+        </div>
+    </section>
 
-    <div class="section-label">Featured Packages</div>
-    
-    <div class="glass-card">
-        <div class="pkg-row">
-            <div class="pkg-icon">L</div>
-            <div class="pkg-meta">
-                <h2>Locket (Gold)</h2>
-                <p>v2.8.0 • 135 MB</p>
+    <section>
+        <div class="section-label">Featured Package</div>
+        <div class="glass-card">
+            <div class="pkg-row">
+                <div class="pkg-icon">P26</div>
+                <div class="pkg-meta">
+                    <h2>Pure26</h2>
+                    <p>com.pure26.astear17</p>
+                    <p>Liquid Glass Icons</p>
+                </div>
+            </div>
+            <div style="margin-top: 20px;">
+                <a href="#" class="btn btn-secondary" onclick="copyRepo()">
+                    Copy URL
+                </a>
             </div>
         </div>
-        <a href="#" class="btn btn-secondary">Download IPA</a>
-    </div>
-
-    <div class="glass-card">
-        <div class="pkg-row">
-            <div class="pkg-icon">M</div>
-            <div class="pkg-meta">
-                <h2>Minecraft</h2>
-                <p>v1.21.124 • 590 MB</p>
-            </div>
-        </div>
-        <a href="#" class="btn btn-secondary">Download IPA</a>
-    </div>
+    </section>
 
     <footer>
-        <p class="footer-text">BUILT BY ASTEAR17</p>
+        <p class="footer-text">Build and deployed by Astear17</p>
     </footer>
 </div>
+
+<script>
+    function copyRepo() {
+        const url = "https://astear17.github.io/repos";
+        navigator.clipboard.writeText(url).then(() => {
+            alert("Repository URL copied!");
+        });
+    }
+</script>
 
 </body>
 </html>
