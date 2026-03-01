@@ -1,96 +1,100 @@
 {
-"minVersion":"0.4",
-"headerImage":"https://astear17.github.io/repos/icon/Header.png",
-"tintColor":"#5777B8",
-"tabs":[
-{
-"tabname":"Chi tiết",
-"views":[
-{
-"text": "Liên hệ yêu cầu icon: Tele @Astear17",
-"action": "https://t.me/Astear17",
-"openExternal": 1,
-"class": "DepictionButtonView"
-},
-{
-"class":"DepictionScreenshotsView",
-"screenshots":[
-{
-"url":"https://astear17.github.io/repos/depictions/Pure26/Screenshots/1.png",
-"accessibilityText":"Screenshot"
-},
-{
-"url":"https://astear17.github.io/repos/depictions/Pure26/Screenshots/2.png",
-"accessibilityText":"Screenshot"
-}
-],
-"itemCornerRadius":0,
-"itemSize":"{185,400}"
-},
-{
-"markdown":"Chủ đề Pure26:\n\n- Kích hoạt qua Tweak SnowBoard\n\n- 192 Biểu tượng\n\n- 5 tiện ích: AE Mask, Nền thư mục, Dock, Huy hiệu thông báo, Icon Cài đặt\n\n- Các bạn có thể xem hình ảnh phía trên \n\n",
-"useSpacing":"true",
-"class":"DepictionMarkdownView"
-},
-{
-"class":"DepictionSpacerView"
-},
-{
-"class":"DepictionHeaderView",
-"title":"Liên hệ tôi "
-},
-{
-"class":"DepictionSpacerView"
-},
-{
-"class":"DepictionHeaderView",
-"title":"Thông tin"
-},
-{
-"class":"DepictionTableTextView",
-"title":"Tác giả",
-"text":"Astear17"
-},
-{
-"class":"DepictionTableTextView",
-"title":"Thể loại",
-"text":"Chủ đề SnowBoard"
-},
-{
-"class":"DepictionTableTextView",
-"title":"Dung lượng",
-"text":"14,7 MB "
-},
-{
-"class":"DepictionTableTextView",
-"title":"Ngày tải lên",
-"text":"23/02/2026"
-},
-{
-"class":"DepictionTableTextView",
-"title":"Khả năng tương thích",
-"text":"iOS 15.0 đến 17.0"
-},
-{
-"class":"DepictionLabelView",
-"text":"Made by Astear17 with love 🫶",
-"textColor":"#999999",
-"fontSize":"10.0",
-"alignment":1
-}
-],
-"class":"DepictionStackView"
-},
-{
-"tabname":"Nhật ký thay đổi",
-"views":[
-{
-"class":"DepictionMarkdownView",
-"markdown":"#### 1.0.0\n\nLần đầu phát hành"
-}
-],
-"class":"DepictionStackView"
-}
-],
-"class":"DepictionTabView"
+  "minVersion": "0.4",
+  "headerImage": "https://astear17.github.io/repos/icon/Header.png",
+  "tintColor": "#5777B8",
+  "tabs": [
+    {
+      "tabname": "Chi tiết",
+      "views": [
+        {
+          "text": "Liên hệ yêu cầu icon: Tele @Astear17",
+          "action": "https://t.me/Astear17",
+          "openExternal": 1,
+          "class": "DepictionButtonView"
+        },
+        {
+          "class": "DepictionScreenshotsView",
+          "screenshots": [
+            {
+              "url": "https://astear17.github.io/repos/depictions/Pure26/Screenshots/1.png",
+              "accessibilityText": "Screenshot"
+            },
+            {
+              "url": "https://astear17.github.io/repos/depictions/Pure26/Screenshots/2.png",
+              "accessibilityText": "Screenshot"
+            }
+          ],
+          "itemCornerRadius": 0,
+          "itemSize": "{185,400}"
+        },
+        {
+          "markdown": "Chủ đề Pure26:\n\n- Kích hoạt qua Tweak SnowBoard\n\n- 192 Biểu tượng\n\n- 5 tiện ích: AE Mask, Nền thư mục, Dock, Huy hiệu thông báo, Icon Cài đặt\n\n- Các bạn có thể xem hình ảnh phía trên \n\n",
+          "useSpacing": "true",
+          "class": "DepictionMarkdownView"
+        },
+        {
+          "class": "DepictionSpacerView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Liên hệ tôi "
+        },
+        {
+          "class": "DepictionSpacerView"
+        },
+        {
+          "class": "DepictionHeaderView",
+          "title": "Thông tin"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Tác giả",
+          "text": "Astear17"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Thể loại",
+          "text": "Chủ đề SnowBoard"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Dung lượng",
+          "text": "14,7 MB "
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Ngày tải lên",
+          "text": "23/02/2026"
+        },
+        {
+          "class": "DepictionTableTextView",
+          "title": "Khả năng tương thích",
+          "text": "iOS 15.0 đến 17.0"
+        },
+        {
+          "class": "DepictionLabelView",
+          "text": "Made by Astear17 with love 🫶",
+          "textColor": "#999999",
+          "fontSize": "10.0",
+          "alignment": 1
+        }
+      ],
+      "class": "DepictionStackView"
+    },
+    {
+      "tabname": "Nhật ký thay đổi",
+      "views": [
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "#### 1.1.0‑Beta\n\n- Sửa lỗi AE không hoạt động đúng cách\n- Sửa icon Badge trong SnowBoard\n- Bổ sung thêm icon\n- Thêm AE mới:\n  + AE Sáng: Bóng sáng + góc kính\n  + AE Góc Nét: Viền góc của icon sẽ nét hơn\n  + AE Góc Mờ (Nên dùng): Viền góc của icon sẽ chỉ bổ sung hiệu ứng góc trên trái - dưới phải\n- Sửa lỗi tự vào Safe Mode do xung đột folderAssets và dockAssets khi bật hiệu ứng làm mờ Dock/Nền thư mục của tweak Vitreux\n\n• Khuyến khích nên tắt toàn bộ lớp AE, chỉ giữ nguyên AE Góc Mờ"
+        },
+        {
+          "class": "DepictionMarkdownView",
+          "markdown": "#### 1.0.0\n\nLần đầu phát hành"
+        }
+      ],
+      "class": "DepictionStackView"
+    }
+  ],
+  "class": "DepictionTabView"
 }
