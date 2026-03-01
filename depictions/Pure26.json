@@ -28,7 +28,7 @@
           "itemSize": "{185,400}"
         },
         {
-          "markdown": "Chủ đề Pure26:\n\n- Kích hoạt qua Tweak SnowBoard\n\n- 192 Biểu tượng\n\n- 5 tiện ích: AE Mask, Nền thư mục, Dock, Huy hiệu thông báo, Icon Cài đặt\n\n- Các bạn có thể xem hình ảnh phía trên \n\n",
+          "markdown": "Chủ đề Pure26:\n\n- Kích hoạt qua Tweak SnowBoard\n\n- 236 Biểu tượng\n\n- 7 tiện ích: AE Mask, Nền thư mục, Dock, Huy hiệu thông báo, Icon Cài đặt\n\n- Các bạn có thể xem hình ảnh phía trên \n\n",
           "useSpacing": "true",
           "class": "DepictionMarkdownView"
         },
@@ -37,8 +37,13 @@
         },
         {
           "class": "DepictionHeaderView",
-          "title": "Liên hệ tôi "
-        },
+          "title":"Liên hệ tôi "
+},
+{
+"markdown":"[**Yêu cầu Mod thêm icon**](https://t.me/Astear17) <- Nhấn vào đây nè\n\n\n",
+"useSpacing":"true",
+"class":"DepictionMarkdownView"
+},
         {
           "class": "DepictionSpacerView"
         },
