@@ -1,17 +1,89 @@
 Package: com.pure26.astear17
 Version: 1.0.0
-Architecture: iphoneos-arm64
+Architecture: iphoneos-arm64e
 Maintainer: Astear17
-Installed-Size: 152
-Filename: debs/com.pure26.astear17:iphoneos-arm64e.deb
-Size: 13795648
-MD5sum: 504cf6cfce3b6ea01ac399b3f73ec672
-SHA1: 26295209b2645ef6fa1d16773063cf5a4f96b477
-SHA256: 5d389abb115836a46f41e7f3b736a96cbb39398d4d65fc1249e850349b3255f0
+Installed-Size: 14791316
+Filename: debs/com.pure26.astear17_1.0.0_iphoneos-arm64e.deb
+Size: 14791316
+MD5sum: 5b59cdfd29d8249d5307418bc078a762
+SHA1: ac31adc299b1a37146c1d33c6bc745c7e57302e7
+SHA256: 10278f5bbdc0ac4348a0216b7a0bb467830709110bbc90f754a1e0721d652b94
 Section: Roothide
 Description: Chủ đề icon iOS 26 bằng SnowBoard
 Author: Astear17
 Depiction: https://astear17.github.io/repos/infodeb/Pure26.html
 Icon: https://astear17.github.io/repos/depictions/Pure26.png
-Name: Pure26 Icon Pack
+Name: Pure26
+Sileodepiction: https://astear17.github.io/repos/depictions/Pure26.json
+
+Package: com.pure26.astear17
+Version: 1.1.0-Beta
+Architecture: iphoneos-arm64e
+Maintainer: Astear17
+Installed-Size: 152
+Filename: debs/com.pure26.astear17_1.1.0-Beta_iphoneos-arm64e.deb
+Size: 15340700
+MD5sum: d5256b7de5dc168248e7b7d1f9295349
+SHA1: 1d870acb9b3bcfb4d09bba125a18185ca9237c92
+SHA256: 10cc11484206d8f22ded7a5d43136bd360941932ab7d945c8edd80d9d35d5f02
+Section: Roothide
+Description: Chủ đề icon iOS 26 bằng SnowBoard
+Author: Astear17
+Depiction: https://astear17.github.io/repos/infodeb/Pure26.html
+Icon: https://astear17.github.io/repos/depictions/Pure26.png
+Name: Pure26 (Roothide)
+Sileodepiction: https://astear17.github.io/repos/depictions/Pure26.json
+
+Package: com.pure26.astear17
+Version: 1.1.0-Beta
+Architecture: iphoneos-arm64
+Maintainer: Astear17
+Installed-Size: 152
+Filename: debs/com.pure26.astear17_1.1.0-Beta_iphoneos-arm64.deb
+Size: 15342048
+MD5sum: e2efd5482e1885464a5e28e9c9c894da
+SHA1: 86f4e2cb492b587edf828161252636fe0aa1f439
+SHA256: 724bbeee0288a15d26d4217d91a9bf078305db461294c4bdf602edb36eefe583
+Section: Rootless
+Description: Chủ đề icon iOS 26 bằng SnowBoard
+Author: Astear17
+Depiction: https://astear17.github.io/repos/infodeb/Pure26.html
+Icon: https://astear17.github.io/repos/depictions/Pure26.png
+Name: Pure26 (Rootless)
+Sileodepiction: https://astear17.github.io/repos/depictions/Pure26.json
+
+Package: com.pure26.astear17
+Version: 1.2.0
+Architecture: iphoneos-arm64e
+Maintainer: Astear17
+Installed-Size: 15403608
+Filename: debs/com.pure26.astear17_1.2.0_iphoneos-arm64e.deb
+Size: 15403608
+MD5sum: a14e37b89061f9144b6dcd3586007204
+SHA1: ba9e6469c9be497010d6e6fbadf1f7da1ba25d8e
+SHA256: d0466d22ec9b91200328d8d5f82451e669c3d7eec0b42e77e9f3148d2f02bcb8
+Section: Roothide
+Description: Chủ đề icon iOS 26 bằng SnowBoard
+Author: Astear17
+Depiction: https://astear17.github.io/repos/infodeb/Pure26.html
+Icon: https://astear17.github.io/repos/depictions/Pure26.png
+Name: Pure26 (Roothide)
+Sileodepiction: https://astear17.github.io/repos/depictions/Pure26.json
+
+Package: com.pure26.astear17
+Version: 1.2.0
+Architecture: iphoneos-arm64
+Maintainer: Astear17
+Installed-Size: 152
+Filename: debs/com.pure26.astear17_1.2.0_iphoneos-arm64.deb
+Size: 15404808
+MD5sum: 138146e959a17ae188dd28c6c3d3d817
+SHA1: fdd2ac2e45cfec9014e95c016f851263a206efb7
+SHA256: 09503fe2c7a26b38caa9439d7d0e8e3c55bfb2a28b7a28ff2c210f269596a16c
+Section: Rootless
+Description: Chủ đề icon iOS 26 bằng SnowBoard
+Author: Astear17
+Depiction: https://astear17.github.io/repos/infodeb/Pure26.html
+Icon: https://astear17.github.io/repos/depictions/Pure26.png
+Name: Pure26 (Rootless)
 Sileodepiction: https://astear17.github.io/repos/depictions/Pure26.json
