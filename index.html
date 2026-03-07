@@ -9,9 +9,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --glass-bg: rgba(255, 255, 255, 0.08);
-            --glass-border: rgba(255, 255, 255, 0.2);
+            --glass-bg: rgba(30, 30, 35, 0.3);
+            --glass-border: rgba(255, 255, 255, 0.15);
             --liquid-bg-dark: linear-gradient(135deg, #0f172a 0%, #1e1b4b 50%, #2e1065 100%);
+            --accent-blue: #00d2ff;
+            --accent-deep: #3a7bd5;
         }
 
         body {
@@ -27,37 +29,47 @@
         body::before {
             content: "";
             position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0; width: 100%; height: 100%;
             background: radial-gradient(circle at 20% 30%, rgba(124, 58, 237, 0.15) 0%, transparent 40%),
                         radial-gradient(circle at 80% 70%, rgba(59, 130, 246, 0.15) 0%, transparent 40%);
             z-index: -1;
         }
 
+        /* Liquid Glass Card Styling */
         .glass-card {
-            background: rgba(30, 30, 35, 0.3);
-            backdrop-filter: blur(30px);
-            -webkit-backdrop-filter: blur(30px);
-            border: 1px solid rgba(255, 255, 255, 0.15);
-            border-radius: 32px;
-            box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1), 0 20px 40px rgba(0, 0, 0, 0.4);
+            background: var(--glass-bg);
+            backdrop-filter: blur(30px) saturate(150%);
+            -webkit-backdrop-filter: blur(30px) saturate(150%);
+            border: 1px solid var(--glass-border);
+            border-radius: 28px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
             position: relative;
             overflow: hidden;
-            transition: transform 0.4s cubic-bezier(0.2, 0, 0.2, 1), border-color 0.3s ease;
+            transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        /* Top Glossy Reflection Line */
+        .glass-card::before {
+            content: "";
+            position: absolute;
+            left: 0; right: 0; top: 0; height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            mix-blend-mode: overlay;
+            pointer-events: none;
+            z-index: 1;
         }
 
         .glass-card:hover {
-            transform: translateY(-4px) scale(1.01);
-            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-6px);
+            border-color: rgba(255, 255, 255, 0.4);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
         }
 
         .section-label {
             font-size: 0.75rem;
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 0.15em;
+            letter-spacing: 0.12em;
             color: rgba(255, 255, 255, 0.55);
             margin-left: 1.5rem;
             margin-bottom: 0.75rem;
@@ -65,141 +77,145 @@
 
         .repo-link-box {
             background: rgba(0, 0, 0, 0.3);
-            border-radius: 16px;
+            border-radius: 14px;
             padding: 1rem;
-            font-family: monospace;
+            font-family: ui-monospace, SFMono-Regular, monospace;
             font-size: 0.85rem;
-            color: #60a5fa;
+            color: var(--accent-blue);
             border: 1px solid rgba(255, 255, 255, 0.05);
             text-align: center;
             word-break: break-all;
+            box-shadow: inset 0 6px 18px rgba(0, 0, 0, 0.2);
         }
 
+        /* Icon Styling */
         .pkg-icon {
-            width: 64px;
-            height: 64px;
-            border-radius: 1.25rem;
-            background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            width: 76px;
+            height: 76px;
+            border-radius: 18px;
+            background: linear-gradient(135deg, var(--accent-blue) 0%, var(--accent-deep) 100%);
+            box-shadow: 0 12px 30px rgba(0, 210, 255, 0.2);
             border: 1px solid rgba(255, 255, 255, 0.2);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 800;
-            transition: transform 0.3s ease;
+            position: relative;
+            overflow: hidden;
         }
 
-        .glass-card:hover .pkg-icon {
-            transform: scale(1.05);
+        /* Liquid Glow on Icon */
+        .pkg-icon::after {
+            content: "";
+            position: absolute;
+            inset: -6px;
+            background: radial-gradient(circle at 30% 30%, rgba(255, 255, 255, 0.2) 0%, transparent 40%);
+            filter: blur(8px);
         }
 
+        /* Liquid Buttons */
         .btn-action {
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             color: #fff;
             font-weight: 700;
-            padding: 12px 28px;
-            border-radius: 50px;
+            padding: 12px 24px;
+            border-radius: 18px;
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 8px;
+            gap: 10px;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
         .btn-action:hover {
-            background: rgba(255, 255, 255, 0.15);
-            box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
-            transform: translateY(-2px);
+            background: linear-gradient(180deg, var(--accent-blue), var(--accent-deep));
+            box-shadow: 0 12px 30px rgba(58, 123, 213, 0.3);
+            transform: translateY(-3px) scale(1.02);
+            border-color: transparent;
         }
 
         .btn-primary {
-            background: #fff;
+            background: #ffffff;
             color: #000;
+            border: none;
         }
 
         .btn-primary:hover {
-            background: #e2e8f0;
-            color: #000;
+            color: #fff;
         }
-        .glass-header {
-    background: rgba(30, 30, 35, 0.4);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
-}
 
-main {
-    padding-top: 40px; /* Adds extra space below the fixed header */
-}
+        .glass-header {
+            background: rgba(30, 30, 35, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 2rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
     </style>
 </head>
 <body class="flex flex-col items-center py-16 px-4">
 
     <header class="fixed top-4 left-0 right-0 z-50 flex justify-center px-4">
-    <div class="glass-header w-full max-w-lg h-16 rounded-[2rem] px-6 flex items-center justify-between">
-        <a href="https://astear17.github.io" class="flex-1 flex items-center hover:opacity-70 transition-opacity">
-            <div class="p-1.5 rounded-full bg-blue-900/20 mr-2 text-blue-400">
-                <i data-lucide="chevron-left" class="w-5 h-5"></i>
+        <div class="glass-header w-full max-w-lg h-16 px-6 flex items-center justify-between">
+            <a href="https://astear17.github.io" class="flex-1 flex items-center hover:opacity-70 transition-opacity">
+                <div class="p-1.5 rounded-full bg-blue-900/20 mr-2 text-blue-400">
+                    <i data-lucide="chevron-left" class="w-5 h-5"></i>
+                </div>
+                <span class="text-blue-400 text-sm font-semibold hidden sm:inline">Home</span>
+            </a>
+            <div class="flex-1 text-center truncate">
+                <span class="text-2xl font-bold tracking-tighter text-white">Astear17 <span class="text-blue-500">Repo</span></span>
             </div>
-            <span class="text-blue-400 text-sm font-semibold hidden sm:inline">Home</span>
-        </a>
-        <div class="flex-1 text-center truncate">
-            <span class="text-2xl font-bold tracking-tighter text-white">Astear17 <span class="text-blue-500">Repo</span></span>
+            <div class="flex-1"></div>
         </div>
-        <div class="flex-1 flex justify-end">
-            </div>
-    </div>
-</header>
+    </header>
 
-    <main class="w-full max-w-lg space-y-8">
-        
+    <main class="w-full max-w-lg space-y-8 mt-16">
         <section>
-    <div class="section-label">Source</div>
-    <div class="glass-card p-6 space-y-4">
-        <div class="repo-link-box">https://astear17.github.io/repos</div>
-        <div class="flex flex-col sm:flex-row gap-3">
-            <a href="sileo://source/https://astear17.github.io/repos" class="btn-action btn-primary flex-1">
-                <i data-lucide="plus-circle" class="w-5 h-5"></i>
-                Add to Sileo
-            </a>
-
-            <button onclick="copyRepo()" class="btn-action flex-1">
-                <i data-lucide="copy" class="w-5 h-5"></i>
-                Copy Link
-            </button>
-        </div>
-    </div>
-</section>
-<section>
-    <div class="section-label">Featured Package</div>
-    <div class="glass-card p-6">
-        <div class="flex items-center gap-5 mb-6">
-            <img src="http://astear17.github.io/repos/depictions/Pure26.png" alt="Pure26" class="pkg-icon object-cover">
-            <div>
-                <h2 class="text-xl font-bold text-white">Pure26</h2>
-                <p class="text-sm text-gray-400">com.pure26.astear17</p>
-                <p class="text-xs text-blue-400 mt-1">Liquid Glass Icons</p>
+            <div class="section-label">Source</div>
+            <div class="glass-card p-6 space-y-4">
+                <div class="repo-link-box">https://astear17.github.io/repos</div>
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <a href="sileo://source/https://astear17.github.io/repos" class="btn-action btn-primary flex-1">
+                        <i data-lucide="plus-circle" class="w-5 h-5"></i>
+                        Add to Sileo
+                    </a>
+                    <button onclick="copyRepo()" class="btn-action flex-1">
+                        <i data-lucide="copy" class="w-5 h-5"></i>
+                        Copy Link
+                    </button>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <div class="flex flex-col sm:flex-row gap-3">
-            <a href="sileo://package/com.pure26.astear17" class="btn-action btn-primary flex-1">
-                <i data-lucide="download" class="w-4 h-4"></i>
-                Install
-            </a>
-            
-            <a href="https://astear17.github.io/repos/infodeb/Pure26.html" class="btn-action flex-1">
-                <i data-lucide="info" class="w-4 h-4"></i>
-                Depictions
-            </a>
-        </div>
-    </div>
-</section>
+        <section>
+            <div class="section-label">Featured Package</div>
+            <div class="glass-card p-6">
+                <div class="flex items-center gap-5 mb-6">
+                    <img src="https://astear17.github.io/repos/depictions/Pure26.png" alt="Pure26" class="pkg-icon object-cover">
+                    <div>
+                        <h2 class="text-xl font-bold text-white">Pure26</h2>
+                        <p class="text-sm text-gray-400">com.pure26.astear17</p>
+                        <p class="text-xs text-blue-400 font-bold mt-1 uppercase tracking-wider">Liquid Glass Icons</p>
+                    </div>
+                </div>
 
+                <div class="flex flex-col sm:flex-row gap-3">
+                    <a href="sileo://package/com.pure26.astear17" class="btn-action btn-primary flex-1">
+                        <i data-lucide="download" class="w-4 h-4"></i>
+                        Install
+                    </a>
+                    <a href="https://astear17.github.io/repos/infodeb/Pure26.html" class="btn-action flex-1">
+                        <i data-lucide="info" class="w-4 h-4"></i>
+                        Depictions
+                    </a>
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="mt-20 text-center">
@@ -210,7 +226,6 @@ main {
 
     <script>
         lucide.createIcons();
-
         function copyRepo() {
             const url = "https://astear17.github.io/repos";
             navigator.clipboard.writeText(url).then(() => {
