@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Astear17 Repo</title>
+    <title>AstearRepo</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -35,7 +35,6 @@
             z-index: -1;
         }
 
-        /* Liquid Glass Card Styling */
         .glass-card {
             background: var(--glass-bg);
             backdrop-filter: blur(30px) saturate(150%);
@@ -48,7 +47,6 @@
             transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.3, 1), border-color 0.3s ease, box-shadow 0.3s ease;
         }
 
-        /* Top Glossy Reflection Line */
         .glass-card::before {
             content: "";
             position: absolute;
@@ -88,7 +86,6 @@
             box-shadow: inset 0 6px 18px rgba(0, 0, 0, 0.2);
         }
 
-        /* Icon Styling */
         .pkg-icon {
             width: 76px;
             height: 76px;
@@ -103,7 +100,6 @@
             overflow: hidden;
         }
 
-        /* Liquid Glow on Icon */
         .pkg-icon::after {
             content: "";
             position: absolute;
@@ -112,7 +108,6 @@
             filter: blur(8px);
         }
 
-        /* Liquid Buttons */
         .btn-action {
             background: rgba(255, 255, 255, 0.08);
             backdrop-filter: blur(15px);
@@ -168,7 +163,7 @@
                 <span class="text-blue-400 text-sm font-semibold hidden sm:inline">Home</span>
             </a>
             <div class="flex-1 text-center truncate">
-                <span class="text-2xl font-bold tracking-tighter text-white">Astear17 <span class="text-blue-500">Repo</span></span>
+                <span class="text-2xl font-bold tracking-tighter text-white">Astear<span class="text-blue-500">Repo</span></span>
             </div>
             <div class="flex-1"></div>
         </div>
@@ -186,14 +181,14 @@
                     </a>
                     <button onclick="copyRepo()" class="btn-action flex-1">
                         <i data-lucide="copy" class="w-5 h-5"></i>
-                        Copy Link
+                        Copy
                     </button>
                 </div>
             </div>
         </section>
 
         <section>
-            <div class="section-label">Featured Package</div>
+            <div class="section-label">Featured Packages</div>
             <div class="glass-card p-6">
                 <div class="flex items-center gap-5 mb-6">
                     <img src="https://astear17.github.io/repos/depictions/Pure26.png" alt="Pure26" class="pkg-icon object-cover">
@@ -203,13 +198,12 @@
                         <p class="text-xs text-blue-400 font-bold mt-1 uppercase tracking-wider">Liquid Glass Icons</p>
                     </div>
                 </div>
-
                 <div class="flex flex-col sm:flex-row gap-3">
                     <a href="sileo://package/com.pure26.astear17" class="btn-action btn-primary flex-1">
                         <i data-lucide="download" class="w-4 h-4"></i>
                         Install
                     </a>
-                    <a href="https://astear17.github.io/repos/infodeb/Pure26.html" class="btn-action flex-1">
+                    <a href="https://astear17.github.io/Pure26" class="btn-action flex-1">
                         <i data-lucide="info" class="w-4 h-4"></i>
                         Depictions
                     </a>
@@ -217,7 +211,6 @@
             </div>
         </section>
     </main>
-
     <footer class="mt-20 text-center">
         <p class="text-[10px] font-bold text-gray-500 tracking-widest uppercase opacity-60">
             Build and deployed by Astear17
