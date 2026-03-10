@@ -1,29 +1,26 @@
-name:bz2
+name: bz2
 
 on:
   push:
     paths:
-      - '**'   # watches all files; adjust if you only want certain folders
+      - '**'   # watches all files; adjust if needed
 
 jobs:
   compress:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Checkout repository
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
           ref: ${{ github.ref }}
-          fetch-depth: 2   # fetch last 2 commits so HEAD~1 exists
+          fetch-depth: 2
 
-      # 2️⃣ Configure git
       - name: Configure Git
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@users.noreply.github.com"
 
-      # 3️⃣ Compress files (loop-proof, verbose)
       - name: Compress files to .bz2
         run: |
           echo "Detecting changed files..."
@@ -35,25 +32,18 @@ jobs:
           fi
 
           for FILE in $CHANGED_FILES; do
-            # Skip .bz2 files
-            if [[ $FILE == *.bz2 ]]; then
-              continue
-            fi
-            # Compress if file exists
+            if [[ $FILE == *.bz2 ]]; then continue; fi
             if [[ -f $FILE ]]; then
               echo "Compressing $FILE → $FILE.bz2"
               bzip2 -k -f "$FILE"
             fi
           done
 
-      # 4️⃣ Commit and push only if .bz2 files changed
       - name: Commit and push .bz2 files
         run: |
           git add *.bz2
           if ! git diff --cached --quiet; then
-            echo "Changes detected in .bz2 files. Committing..."
             git commit -m "Auto-compress .bz2 files [skip ci]"
-            # Push explicitly to the branch to avoid detached HEAD error
             git push https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }} HEAD:${{ github.ref }}
           else
             echo "No changes to .bz2 files. Skipping commit."
