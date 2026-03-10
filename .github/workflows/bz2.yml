@@ -23,18 +23,9 @@ jobs:
           git config user.name "github-actions"
           git config user.email "github-actions@github.com"
 
-      - name: Debug status before changes
+      - name: Modify Packages
         run: |
-          echo "=== Git Status BEFORE ==="
-          git status
-          echo "=== Files ==="
-          ls -R .
-
-      # Your script that modifies Packages or other files goes here
-      # Example:
-      # - name: Modify Packages
-      #   run: |
-      #     echo "test" >> Packages
+          echo "Updated at $(date)" >> Packages
 
       - name: Stage all changes
         run: |
