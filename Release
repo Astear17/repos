@@ -1,17 +1,9 @@
-Date: Wed, 11 Mar 2026 04:07:25 +0000
-MD5Sum:
- d41d8cd98f00b204e9800998ecf8427e                0 Packages
- 1f1391e5e2e19b4fc8467c8c808d18fa               14 Packages.bz2
- 6b4bf8bedab192fef664c445eed03398               38 Release
-SHA1:
- da39a3ee5e6b4b0d3255bfef95601890afd80709                0 Packages
- a57f1e515cb16700acad5a2cabb615410ad7dd71               14 Packages.bz2
- d07235efdf5ef98f7d0e3eed20cd66ffe5ad9269               38 Release
-SHA256:
- e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855                0 Packages
- b9fb4c98c8b9fe5f20b5a5b3af8c8477e78395d7fd3e8ea504bb8ba4258f0b2d               14 Packages.bz2
- 401f39a120986eb4ac4be894fa2f3b424b24cc7392f7aaa3cc74a22bdde32797               38 Release
-SHA512:
- cf83e1357eefb8bdf1542850d66d8007d620e4050b5715dc83f4a921d36ce9ce47d0d13c5d85f2b0ff8318d2877eec2f63b931bd47417a81a538327af927da3e                0 Packages
- 31c03dec7056f4896af616184f1306d5583e3fb0cef4389da2ac7836e433541b2184cf0ab712dc3830227bf0d4ce4e6c0b8046e50204a9e8ff08590f78e48351               14 Packages.bz2
- 5200343c7da24c296b4d9f43e4acc7f90c22b6d98d36a4466c9d25b13a8c24ce2792d3855ab71ff0b539b93ef87b103b11f0930392794b3b68b7853d782b5773               38 Release
+Origin: Astear17
+Label: Jailbreak - Themes
+Suite: stable
+Version: 1.0
+Codename: ios
+Architectures: iphoneos-arm64e
+Components: main
+Description: Astear17's Repo
+MD5Sum: 6b4bf8bedab192fef664c445eed03398
