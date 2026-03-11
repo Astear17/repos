@@ -2,7 +2,6 @@ Package: com.pure26.astear17.r2
 Version: 1.2.0
 Architecture: iphoneos-arm64e
 Maintainer: Astear17
-Installed-Size: 15403612
 Filename: https://github.com/Astear17/Pure26/releases/download/1.2.0/com.pure26.astear17.r2_1.2.0_iphoneos-arm64e.deb
 Size: 15403612
 MD5sum: 79b4d74f1f6ffc9840f925ec584515cc
@@ -19,7 +18,6 @@ Package: com.pure26.astear17
 Version: 1.2.0
 Architecture: iphoneos-arm64
 Maintainer: Astear17
-Installed-Size: 15404904
 Filename: https://github.com/Astear17/Pure26/releases/download/1.2.0/com.pure26.astear17_1.2.0_iphoneos-arm64.deb
 Size: 15404904
 MD5sum: ed952b08066627c984429b1f688194b1

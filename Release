@@ -1,11 +1,11 @@
-Origin: Astear17
-Label: Astear17
+Origin: BVN Roothide
+Label: iPhone/iPad-Jailbreak
 Suite: stable
 Version: 1.0
 Codename: RootHide
-Architectures: iphoneos-arm64e iphoneos-arm64
+Architectures: iphoneos-arm64 iphoneos-arm64e
 Components: main
-Description: Astear17's Repo
+Description: Apple/Support/Jailbreak
 MD5Sum:
- d41d8cd98f00b204e9800998ecf8427e                0 Packages
- 1f1391e5e2e19b4fc8467c8c808d18fa               14 Packages.bz2
+ f2616f13348b80f4af67f7452a622237 447617 Packages
+ 539b83d60442bfd51503b8eaf6503702 103899 Packages.bz2
