@@ -9,7 +9,7 @@ SHA1: 458c0caa81053a3cca6dda58a58d8544bcbec327
 SHA256: 656322f4f6ea03355eedc9522db194eb408e3cb64693dbd039200ce19527b448
 Section: Roothide
 Description: Chủ đề icon iOS 26 bằng SnowBoard
-Name: Pure26 (RootHide)
+Name: Pure26 (Roothide)
 Depiction: https://astear17.github.io/Pure26
 Icon: https://astear17.github.io/Pure26/Pure26.png
 Sileodepiction: https://astear17.github.io/Pure26/Pure26.json
@@ -34,15 +34,13 @@ Package: com.pure26.astear17.r2
 Version: 1.1.0-Beta
 Architecture: iphoneos-arm64e
 Maintainer: Astear17
-Installed-Size: 152
-Filename: debs/com.pure26.astear17.r2_1.1.0-Beta_iphoneos-arm64e.deb
+Filename: https://github.com/Astear17/Pure26/releases/download/1.1.0-Beta/com.pure26.astear17.r2_1.1.0-Beta_iphoneos-arm64e.deb
 Size: 15340668
 MD5sum: 608400912f7502b31264f51978bf60ee00266c61
 SHA1: 9a28ffe01b1a8d6e281dba2bfbf39460931983da
 SHA256: 0635a44fce4eb28e08e716ac762e6e596b91f6d7c744f9320ec3c06d5d180e25
 Section: Roothide
 Description: Chủ đề icon iOS 26 bằng SnowBoard
-Author: Astear17
 Depiction: https://astear17.github.io/Pure26
 Icon: https://astear17.github.io/Pure26/Pure26.png
 Name: Pure26 (Roothide)
@@ -52,14 +50,14 @@ Package: com.pure26.astear17
 Version: 1.1.0-Beta
 Architecture: iphoneos-arm64
 Maintainer: Astear17
-Installed-Size: 152
-Filename: debs/com.pure26.astear17_1.1.0-Beta_iphoneos-arm64.deb
+Filename: https://github.com/Astear17/Pure26/releases/download/1.1.0-Beta/com.pure26.astear17_1.1.0-Beta_iphoneos-arm64.deb
 Size: 15342048
 MD5sum: e2efd5482e1885464a5e28e9c9c894da
 SHA1: 86f4e2cb492b587edf828161252636fe0aa1f439
 SHA256: 724bbeee0288a15d26d4217d91a9bf078305db461294c4bdf602edb36eefe583
 Section: Rootless
-Description: Chủ đề icon iOS 26 bằng SnowBoardDepiction: https://astear17.github.io/Pure26
+Description: Chủ đề icon iOS 26 bằng SnowBoard
+Depiction: https://astear17.github.io/Pure26
 Icon: https://astear17.github.io/Pure26/Pure26.png
 Name: Pure26 (Rootless)
 Sileodepiction: https://astear17.github.io/Pure26/Pure26.json
@@ -68,7 +66,7 @@ Package: com.pure26.astear17.r2
 Version: 1.0.0
 Architecture: iphoneos-arm64e
 Maintainer: Astear17
-Filename: https://github.com/Astear17/Pure26/releases/download/1.0.0/com.pure26.astear17_1.0.0_iphoneos-arm64e.deb
+Filename: https://github.com/Astear17/Pure26/releases/download/1.0.0/com.pure26.astear17.r2_1.0.0_iphoneos-arm64e.deb
 Size: 14791308
 MD5sum: 8b1998f490f8b06f414d065ab60ba762
 SHA1: 9ac52ee3ca620879b3498882b927abf5c00a55d6
