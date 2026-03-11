@@ -1,4 +1,4 @@
-Name: Auto Commit Changes
+name: bz2
 
 on:
   workflow_dispatch:
