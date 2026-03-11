@@ -1,4 +1,4 @@
-name: bz2
+name: Auto Commit Changes
 
 on:
   workflow_dispatch:
@@ -25,19 +25,30 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           mkdir -p downloaded_debs
-          gh release download OWNER/REPO --pattern "*.deb" --dir downloaded_debs
+          # Downloads from the 1.2.0 release specifically
+          gh release download 1.2.0 --repo Astear17/Pure26 --pattern "*.deb" --dir downloaded_debs
 
       - name: Generate Packages
         run: |
-          dpkg-scanpackages downloaded_debs > Packages
+          # Fetch the tag name for the URL rewrite
+          LATEST_TAG=$(gh release view 1.2.0 --repo Astear17/Pure26 --json tagName --template '{{.tagName}}')
+          
+          # Install dpkg-dev to get dpkg-scanpackages
+          sudo apt-get update && sudo apt-get install -y dpkg-dev
+          
+          dpkg-scanpackages downloaded_debs /dev/null > Packages
+          
+          # Replace local path with the direct GitHub download link
+          sed -i "s|Filename: downloaded_debs/|Filename: https://github.com/Astear17/Pure26/releases/download/$LATEST_TAG/|g" Packages
+        env:
+          GH_TOKEN: ${{ github.token }}
 
       - name: Force Recompress
         run: |
-          rm -f Packages.bz2
-          bzip2 -f Packages
+          bzip2 -c Packages > Packages.bz2
 
       - name: Commit and Push
         run: |
           git add Packages.bz2
-          git commit --allow-empty -m "Manual rebuild of Packages.bz2"
+          git commit --allow-empty -m "Rebuild Packages.bz2 for Sileo tag 1.2.0"
           git push
